@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ASD
+namespace Task_1
 {
   class Program
   {
