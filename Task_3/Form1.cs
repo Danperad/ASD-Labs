@@ -12,12 +12,14 @@ namespace Task_3
 
         private void Check_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
-        }
-
-        private void radioButton11_CheckedChanged(object sender, EventArgs e)
-        {
-            rad
+            double ball = 0;
+            if (radioButton14.Checked) ball++;
+            if (radioButton22.Checked) ball++;
+            if (radioButton31.Checked) ball++;
+            if (radioButton41.Checked) ball++;
+            if (checkBox51.Checked) ball += 0.5;
+            if (checkBox52.Checked) ball += 0.5;
+            label7.Text = $"Ваш итоговый балл: {ball} из 5";
         }
     }
 }
