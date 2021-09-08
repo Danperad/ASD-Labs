@@ -29,6 +29,7 @@ namespace Task_2
             }
 
             Print(K);
+            Console.ReadKey();
         }
 
         public static void Print(int[,] A)
