@@ -6,17 +6,19 @@ namespace Task_2
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Введите V");
-            double V = Double.Parse(Console.ReadLine()), S = 0, x = 10;
-            ulong n = 0, r;
+            Console.WriteLine("Введите V и x");
+            double V = Double.Parse(Console.ReadLine()), S = 0;
+            double x = Double.Parse(Console.ReadLine());
+            ulong r;
+            int n = 0;
             do
             {
                 r = 1;
                 n++;
-                for (ulong i = 1; i <= n + 2; i++) r *= i;
-                x = x * (n + 1.0) / r;
-                S = S + x;
-            } while (S < V);
+                for (int i = 1; i <= n + 2; i++) r *= (ulong) i;
+                double a = x * (n + 1.0) / r;
+                S = S + a;
+            } while (S <= V);
             Console.WriteLine($"{n}");
             Console.ReadLine();
         }
