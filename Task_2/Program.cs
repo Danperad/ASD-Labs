@@ -8,7 +8,7 @@ namespace Task_2
         {
             Console.WriteLine("Введите V и x");
             double V = Double.Parse(Console.ReadLine()), S = 0;
-            double x = Double.Parse(Console.ReadLine());
+            int x = Int32.Parse(Console.ReadLine());
             ulong r;
             int n = 0;
             do
