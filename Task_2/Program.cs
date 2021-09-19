@@ -28,21 +28,16 @@ namespace Task_2
                 }
             }
 
-            Print(K);
-            Console.ReadKey();
-        }
-
-        public static void Print(int[,] A)
-        {
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    Console.Write($"{A[i,j]} ");
+                    Console.Write($"{K[i,j]} ");
                 }
 
                 Console.Write(Environment.NewLine);
             }
+            Console.ReadKey();
         }
     }
 }
