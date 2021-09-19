@@ -13,11 +13,13 @@ namespace Task_1
       for (int i = 0; i < n; i++)
       {
         A[i] = rand.Next(-10, 10);
+        Console.Write(A[i]+" ");
       }
+      Console.WriteLine();
       for(int i = 0; i < n; i++)
       {
         if (A[i] < 0 && i < 20) m++;
-        else if (i == 0) nul++;
+        else if (A[i] == 0) nul++;
       }
       Console.WriteLine($"Количество отрицательных: {m}, Количество нулей {nul}");
       Console.ReadKey();

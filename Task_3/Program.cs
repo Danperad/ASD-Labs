@@ -16,10 +16,12 @@ namespace Task_3
             {
                 for (int j = 0; j < 6; j++)
                 {
-                    R[i, j] = rand.Next(10000);
+                    R[i, j] = rand.Next(100);
+                    Console.Write(R[i, j] + " ");
                 }
+                Console.WriteLine();
             }
-
+            Console.WriteLine();
             for (int i = 0; i < 6; i++)
             {
                 if (R[i, 5 - i] >= K2 && R[i, 5 - i] <= K1) M[i] = R[i, 5 - i];
