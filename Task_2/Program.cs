@@ -8,23 +8,24 @@ namespace Task_2
         {
             const int n = 20;
             int[] A = new int[n], B = new int[n], C = new int[n];
-            Console.WriteLine($"Введите {n} чисел для массива A");
+            var rand = new Random();
+            Console.WriteLine("Массив A");
             for (int i = 0; i < n; i++)
             {
-                A[i] = Int32.Parse(Console.ReadLine());
+                A[i] = rand.Next(-10,50);
+                Console.Write($"{A[i]} ");
             }
-            Console.WriteLine($"Введите {n} чисел для массива B");
+            Console.WriteLine(Environment.NewLine + "Массив B");
             for (int i = 0; i < n; i++)
             {
-                B[i] = Int32.Parse(Console.ReadLine());
+                B[i] = rand.Next(-10,50);
+                Console.Write($"{B[i]} ");
             }
+            Console.WriteLine(Environment.NewLine + "Массив C");
             for (int i = 0; i < n; i++)
             {
                 C[i] = Math.Min(A[i], B[i]);
-            }
-            foreach (var i in C)
-            {
-                Console.Write($"{i} ");
+                Console.Write($"{C[i]} ");
             }
 
             Console.ReadKey();

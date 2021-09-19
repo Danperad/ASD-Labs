@@ -8,12 +8,17 @@ namespace Task_1
         {
             const int n = 11;
             int[] A = new int[n];
-            Console.WriteLine($"Введите {n} чисел");
+            var rand = new Random();
+            int min = Int32.MaxValue,minI = -1, max = Int32.MinValue, maxI = -1;
             for (int i = 0; i < n; i++)
             {
-                A[i] = Int32.Parse(Console.ReadLine());
+                A[i] = rand.Next(0, 999);
             }
-            int min = Int32.MaxValue,minI = -1, max = Int32.MinValue, maxI = -1;
+            foreach (var i in A)
+            {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine();
             for (int i = 0; i < n; i++)
             {
                 if (A[i] > max)
