@@ -91,13 +91,14 @@ namespace Task_3
                 temp.setHead();
                 for (int i = 0; i < temp.count; i++)
                 {
-                    sum+= Convert.ToDouble(temp.getValue());
+                    sum += Convert.ToDouble(temp.getValue());
                 }
 
                 return sum / temp.count;
             }
             catch
             {
+                Console.WriteLine("Not number");
                 return null;
             }
         }
@@ -106,14 +107,58 @@ namespace Task_3
         {
             LinkedList<T> temp = this;
             temp.setHead();
-            for (int i = 0; i < count-1; i++)
+            for (int i = 0; i < count - 1; i++)
             {
                 temp.nextNode();
             }
 
-            int one = Convert.ToInt32(temp.getValue());
-            temp.nextNode();
-            return one + Convert.ToInt32(temp.getValue());
+            try
+            {
+                int one = Convert.ToInt32(temp.getValue());
+                temp.nextNode();
+                return one + Convert.ToInt32(temp.getValue());
+            }
+            catch
+            {
+                Console.WriteLine("Not number");
+                return 0;
+            }
+        }
+
+        public bool isOrdered()
+        {
+            LinkedList<T> temp = this;
+            try
+            {
+                double last = Convert.ToDouble(temp.getValue());
+                bool up = true;
+                temp.nextNode();
+                if (last < Convert.ToDouble(temp.getValue())) up = false;
+                for (int i = 0; i < count-1; i++)
+                {
+                    last = Convert.ToDouble(temp.getValue());
+                    nextNode();
+                    if (up)
+                    {
+                        if (last < Convert.ToDouble(temp.getValue())) return false;
+                    }
+                    else if (last > Convert.ToDouble(temp.getValue())) return false;
+                }
+                last = Convert.ToDouble(temp.getValue());
+                nextNode();
+                if (up)
+                {
+                    if (last < Convert.ToDouble(temp.getValue())) return false;
+                }
+                else if (last > Convert.ToDouble(temp.getValue())) return false;
+
+                return true;
+            }
+            catch
+            {
+                Console.WriteLine("Not number");
+                return false;
+            }
         }
     }
 }
