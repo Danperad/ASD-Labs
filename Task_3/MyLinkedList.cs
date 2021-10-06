@@ -2,14 +2,14 @@
 
 namespace Task_3
 {
-    public class LinkedList<T>
+    public class MyLinkedList<T>
     {
         private Node<T> head;
         private Node<T> currNode;
         private int count;
         private int currNodeIndex = 0;
 
-        public LinkedList(T value)
+        public MyLinkedList(T value)
         {
             this.currNode = new Node<T>(value);
             this.head = this.currNode;
@@ -51,7 +51,7 @@ namespace Task_3
 
         public void replaceItem(T e1, T e2)
         {
-            LinkedList<T> tt = this;
+            MyLinkedList<T> tt = this;
             tt.currNode = tt.head;
             for (int i = 0; i < this.count; i++)
             {
@@ -62,7 +62,7 @@ namespace Task_3
 
         public void replaceLast()
         {
-            LinkedList<T> tt = this;
+            MyLinkedList<T> tt = this;
             tt.currNode = tt.head;
             T temp = tt.getValue();
             for (int i = 0; i < this.count; i++)
@@ -87,7 +87,7 @@ namespace Task_3
             double sum = 0;
             try
             {
-                LinkedList<T> temp = this;
+                MyLinkedList<T> temp = this;
                 temp.setHead();
                 for (int i = 0; i < temp.count; i++)
                 {
@@ -105,7 +105,7 @@ namespace Task_3
 
         public int getLastSum()
         {
-            LinkedList<T> temp = this;
+            MyLinkedList<T> temp = this;
             temp.setHead();
             for (int i = 0; i < count - 1; i++)
             {
@@ -127,7 +127,7 @@ namespace Task_3
 
         public bool isOrdered()
         {
-            LinkedList<T> temp = this;
+            MyLinkedList<T> temp = this;
             try
             {
                 double last = Convert.ToDouble(temp.getValue());

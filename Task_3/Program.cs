@@ -6,7 +6,7 @@ namespace Task_3
     {
         public static void Main(string[] args)
         {
-            LinkedList<int> r = new LinkedList<int>(5);
+            MyLinkedList<int> r = new MyLinkedList<int>(5);
             for (int i = 4; i >= 0; i--)
             {
                 r.addNode(i);
