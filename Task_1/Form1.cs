@@ -10,102 +10,102 @@ namespace Task_1
             InitializeComponent();
         }
 
-        private static double num = 0;
-        private static double num2;
-        private static double result;
-        private static char ppp;
+        private static double _num = 0;
+        private static double _num2;
+        private static double _result;
+        private static char _ppp;
         private void button_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             switch (button.Text)
             {
                 case "0":
-                    num = Double.Parse(Convert.ToString(num) + "0");
-                    textBox1.Text = Convert.ToString(num);
+                    _num = Double.Parse(Convert.ToString(_num) + "0");
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "1":
-                    num = Double.Parse(Convert.ToString(num) + "1");
-                    textBox1.Text = Convert.ToString(num);
+                    _num = Double.Parse(Convert.ToString(_num) + "1");
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "2":
-                    num = Double.Parse(Convert.ToString(num) + "2");
-                    textBox1.Text = Convert.ToString(num);
+                    _num = Double.Parse(Convert.ToString(_num) + "2");
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "3":
-                    num = Double.Parse(Convert.ToString(num) + "3");
-                    textBox1.Text = Convert.ToString(num);
+                    _num = Double.Parse(Convert.ToString(_num) + "3");
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "4":
-                    num = Double.Parse(Convert.ToString(num) + "4");
-                    textBox1.Text = Convert.ToString(num);
+                    _num = Double.Parse(Convert.ToString(_num) + "4");
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "5":
-                    num = Double.Parse(Convert.ToString(num) + "5");
-                    textBox1.Text = Convert.ToString(num);
+                    _num = Double.Parse(Convert.ToString(_num) + "5");
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "6":
-                    num = Double.Parse(Convert.ToString(num) + "6");
-                    textBox1.Text = Convert.ToString(num);
+                    _num = Double.Parse(Convert.ToString(_num) + "6");
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "7":
-                    num = Double.Parse(Convert.ToString(num) + "7");
-                    textBox1.Text = Convert.ToString(num);
+                    _num = Double.Parse(Convert.ToString(_num) + "7");
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "8":
-                    num = Double.Parse(Convert.ToString(num) + "8");
-                    textBox1.Text = Convert.ToString(num);
+                    _num = Double.Parse(Convert.ToString(_num) + "8");
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "9":
-                    num = Double.Parse(Convert.ToString(num) + "9");
-                    textBox1.Text = Convert.ToString(num);
+                    _num = Double.Parse(Convert.ToString(_num) + "9");
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "+":
-                    num2 = num;
-                    num = 0;
-                    ppp = '+';
-                    textBox1.Text = Convert.ToString(num);
+                    _num2 = _num;
+                    _num = 0;
+                    _ppp = '+';
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "-":
-                    num2 = num;
-                    num = 0;
-                    ppp = '-';
-                    textBox1.Text = Convert.ToString(num);
+                    _num2 = _num;
+                    _num = 0;
+                    _ppp = '-';
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "*":
-                    num2 = num;
-                    num = 0;
-                    ppp = '*';
-                    textBox1.Text = Convert.ToString(num);
+                    _num2 = _num;
+                    _num = 0;
+                    _ppp = '*';
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "/":
-                    num2 = num;
-                    num = 0;
-                    ppp = '/';
-                    textBox1.Text = Convert.ToString(num);
+                    _num2 = _num;
+                    _num = 0;
+                    _ppp = '/';
+                    textBox1.Text = Convert.ToString(_num);
                     break;
                 case "=":
-                    switch (ppp)
+                    switch (_ppp)
                     {
                        case '+':
-                           result = num + num2;
+                           _result = _num + _num2;
                            break;
                        case '-':
-                           result = num - num2;
+                           _result = _num - _num2;
                            break;
                        case '*':
-                           result = num * num2;
+                           _result = _num * _num2;
                            break;
                        case '/':
-                           result = num2 / num;
+                           _result = _num2 / _num;
                            break;
                        default:
-                           result = num;
+                           _result = _num;
                            break;
                     }
 
-                    num = 0;
-                    num2 = 0;
-                    textBox1.Text = Convert.ToString(result);
+                    _num = 0;
+                    _num2 = 0;
+                    textBox1.Text = Convert.ToString(_result);
                     break;
                 
             }

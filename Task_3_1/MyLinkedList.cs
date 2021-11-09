@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace Task_3
+namespace Task_3_1
 {
-    public class MyLinkedList<T>
+    public class MyLinkedList<T> : IEnumerable<T>
     {
         private Node<T> head;
         private Node<T> currNode;
-        private int count;
+        private int count = 0;
         private int currNodeIndex = 0;
 
+        public MyLinkedList()
+        {
+        }
         public MyLinkedList(T value)
         {
             this.currNode = new Node<T>(value);
@@ -82,7 +87,7 @@ namespace Task_3
             this.currNodeIndex = 0;
         }
 
-        public double? srArf()
+        public double srArf()
         {
             double sum = 0;
             try
@@ -99,7 +104,7 @@ namespace Task_3
             catch
             {
                 Console.WriteLine("Not number");
-                return null;
+                return 0;
             }
         }
 
@@ -159,6 +164,21 @@ namespace Task_3
                 Console.WriteLine("Not number");
                 return false;
             }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            Node<T> current = head;
+            while (current != null)
+            {
+                yield return current.Value;
+                current = current.nextNode;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
