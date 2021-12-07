@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Task_1
+namespace Task_2
 {
-    class Program
+    internal class Program
     {
         public static void Main(string[] args)
         {
@@ -10,12 +10,17 @@ namespace Task_1
             int a = int.Parse(Console.ReadLine());
             Console.Write("Введите второе число: ");
             int b = int.Parse(Console.ReadLine());
-            Console.Write("Введите третье число: ");
-            int c = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Наибольший общий делитель {a}, {b} и {c} = " + Nod(Nod(a, b), c));
+            bool proverka = IsCoprimeNumbers(a, b);
+            if (proverka) Console.WriteLine($"Числа {a} и {b} взаимно простые");
+            else Console.WriteLine($"Числа {a} и {b} не являются взаимно простыми");
         }
 
-        private static int Nod(int a, int b)
+        private static bool IsCoprimeNumbers(int a, int b)
+        {
+            return Nod(a, b) == 1;
+        }
+
+        private static long Nod(long a, long b)
         {
             if (a == 0) return b;
             if (b == 0) return a;

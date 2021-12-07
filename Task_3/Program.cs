@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Task_1
+namespace Task_3
 {
-    class Program
+    internal class Program
     {
         public static void Main(string[] args)
         {
@@ -10,9 +10,8 @@ namespace Task_1
             int a = int.Parse(Console.ReadLine());
             Console.Write("Введите второе число: ");
             int b = int.Parse(Console.ReadLine());
-            Console.Write("Введите третье число: ");
-            int c = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Наибольший общий делитель {a}, {b} и {c} = " + Nod(Nod(a, b), c));
+            Console.WriteLine($"Наибольшее общее кратное {a} и {b} = " + Nok(a, b));
+            Console.ReadLine();
         }
 
         private static int Nod(int a, int b)
@@ -23,6 +22,11 @@ namespace Task_1
             if (a < b) return Nod(a, b % a);
             if (a == b) return a;
             return 1;
+        }
+
+        private static long Nok(int a, int b)
+        {
+            return a * b / Nod(a, b);
         }
     }
 }
