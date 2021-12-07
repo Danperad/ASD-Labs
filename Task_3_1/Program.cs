@@ -9,13 +9,24 @@ namespace Task_3_1
             MyLinkedList<int> r = new MyLinkedList<int>(5);
             for (int i = 4; i >= 0; i--)
             {
-                r.addNode(i);
+                r.AddNode(i);
             }
 
+            bool key = true;
             for (int i = 0; i < 100; i++)
             {
-                Console.WriteLine(r.getValue());
-                r.nextNode();
+                Console.WriteLine(r.GetValue());
+                try
+                {
+                    if(key) r.NextNode();
+                    else r.PrevNode();
+                }
+                catch (Exception e)
+                {
+                    key = !key;
+                    if(key) r.NextNode();
+                    else r.PrevNode();
+                }
             }
         }
     }

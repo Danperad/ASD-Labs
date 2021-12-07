@@ -21,32 +21,43 @@ namespace Task_3_1
             this.count = 1;
         }
 
-        public T getValue()
+        public T GetValue()
         {
             return currNode.Value;
         }
 
-        public void addNode(T value)
+        public void AddNode(T value)
         {
             Node<T> temp = head;
             currNode = new Node<T>(value);
-            currNode.nextNode = temp;
+            currNode.NextNode = temp;
+            currNode.NextNode.PrevNode = currNode;
             this.head = this.currNode;
             this.count++;
             this.currNodeIndex = 0;
         }
 
-        public void nextNode()
+        public void PrevNode()
         {
-            if (currNode.nextNode != null)
+            if (currNode.PrevNode != null)
             {
-                currNode = currNode.nextNode;
+                currNode = currNode.PrevNode;
+                currNodeIndex--;
+                return;
+            }
+            throw new Exception("Не существует");
+        }
+
+        public void NextNode()
+        {
+            if (currNode.NextNode != null)
+            {
+                currNode = currNode.NextNode;
                 currNodeIndex++;
                 return;
             }
 
-            currNode = head;
-            currNodeIndex = 0;
+            throw new Exception("Не существует");
         }
 
         public bool isEmpty()
@@ -60,8 +71,8 @@ namespace Task_3_1
             tt.currNode = tt.head;
             for (int i = 0; i < this.count; i++)
             {
-                if (Equals(tt.getValue(), e1)) tt.currNode.Value = e2;
-                tt.nextNode();
+                if (Equals(tt.GetValue(), e1)) tt.currNode.Value = e2;
+                tt.NextNode();
             }
         }
 
@@ -69,15 +80,15 @@ namespace Task_3_1
         {
             MyLinkedList<T> tt = this;
             tt.currNode = tt.head;
-            T temp = tt.getValue();
+            T temp = tt.GetValue();
             for (int i = 0; i < this.count; i++)
             {
-                tt.nextNode();
+                tt.NextNode();
             }
 
-            T temp2 = tt.getValue();
+            T temp2 = tt.GetValue();
             tt.currNode.Value = temp;
-            tt.nextNode();
+            tt.NextNode();
             tt.currNode.Value = temp2;
         }
 
@@ -96,7 +107,7 @@ namespace Task_3_1
                 temp.setHead();
                 for (int i = 0; i < temp.count; i++)
                 {
-                    sum += Convert.ToDouble(temp.getValue());
+                    sum += Convert.ToDouble(temp.GetValue());
                 }
 
                 return sum / temp.count;
@@ -114,14 +125,14 @@ namespace Task_3_1
             temp.setHead();
             for (int i = 0; i < count - 1; i++)
             {
-                temp.nextNode();
+                temp.NextNode();
             }
 
             try
             {
-                int one = Convert.ToInt32(temp.getValue());
-                temp.nextNode();
-                return one + Convert.ToInt32(temp.getValue());
+                int one = Convert.ToInt32(temp.GetValue());
+                temp.NextNode();
+                return one + Convert.ToInt32(temp.GetValue());
             }
             catch
             {
@@ -135,27 +146,27 @@ namespace Task_3_1
             MyLinkedList<T> temp = this;
             try
             {
-                double last = Convert.ToDouble(temp.getValue());
+                double last = Convert.ToDouble(temp.GetValue());
                 bool up = true;
-                temp.nextNode();
-                if (last < Convert.ToDouble(temp.getValue())) up = false;
+                temp.NextNode();
+                if (last < Convert.ToDouble(temp.GetValue())) up = false;
                 for (int i = 0; i < count-1; i++)
                 {
-                    last = Convert.ToDouble(temp.getValue());
-                    nextNode();
+                    last = Convert.ToDouble(temp.GetValue());
+                    NextNode();
                     if (up)
                     {
-                        if (last < Convert.ToDouble(temp.getValue())) return false;
+                        if (last < Convert.ToDouble(temp.GetValue())) return false;
                     }
-                    else if (last > Convert.ToDouble(temp.getValue())) return false;
+                    else if (last > Convert.ToDouble(temp.GetValue())) return false;
                 }
-                last = Convert.ToDouble(temp.getValue());
-                nextNode();
+                last = Convert.ToDouble(temp.GetValue());
+                NextNode();
                 if (up)
                 {
-                    if (last < Convert.ToDouble(temp.getValue())) return false;
+                    if (last < Convert.ToDouble(temp.GetValue())) return false;
                 }
-                else if (last > Convert.ToDouble(temp.getValue())) return false;
+                else if (last > Convert.ToDouble(temp.GetValue())) return false;
 
                 return true;
             }
@@ -172,7 +183,7 @@ namespace Task_3_1
             while (current != null)
             {
                 yield return current.Value;
-                current = current.nextNode;
+                current = current.NextNode;
             }
         }
 

@@ -3,25 +3,24 @@
     partial class Form1
     {
         /// <summary>
-        /// Required designer variable.
+        /// Обязательная переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Освободить все используемые ресурсы.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
-
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -29,42 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lb_scet = new System.Windows.Forms.ListBox();
+            this.lb_vivd = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lb_scet
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 33);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(319, 212);
-            this.listBox1.TabIndex = 0;
+            this.lb_scet.FormattingEnabled = true;
+            this.lb_scet.Items.AddRange(new object[] {"55", "45", "25", "78", "92"});
+            this.lb_scet.Location = new System.Drawing.Point(12, 12);
+            this.lb_scet.Name = "lb_scet";
+            this.lb_scet.Size = new System.Drawing.Size(260, 251);
+            this.lb_scet.TabIndex = 0;
             // 
-            // listView1
+            // lb_vivd
             // 
-            this.listView1.Location = new System.Drawing.Point(337, 33);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(373, 212);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lb_vivd.FormattingEnabled = true;
+            this.lb_vivd.Location = new System.Drawing.Point(339, 12);
+            this.lb_vivd.Name = "lb_vivd";
+            this.lb_vivd.Size = new System.Drawing.Size(260, 251);
+            this.lb_vivd.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 269);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Записать";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(339, 269);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Считать";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(618, 306);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lb_vivd);
+            this.Controls.Add(this.lb_scet);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.ListView listView1;
-
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 
         #endregion
+
+        private System.Windows.Forms.ListBox lb_scet;
+        private System.Windows.Forms.ListBox lb_vivd;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
